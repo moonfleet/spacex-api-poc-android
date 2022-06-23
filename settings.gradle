@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "SpaceX POC"
+includeBuild 'gradle-plugins'
+include ':app'
+include ':libs:clean-mvi'
+include ':libs:utils'
+include ':libs:core-ui'
+include ':libs:core-restful'
+include ':features:launch-registry'

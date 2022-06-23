@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="uiModel"
+            type="com.moonfleet.spacex.feature.launchregistry.ui.model.LaunchUIModel"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/spacing_medium"
+        android:paddingBottom="@dimen/spacing_small">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_patch"
+            android:layout_width="@dimen/mission_image_size"
+            android:layout_height="@dimen/mission_image_size"
+            android:layout_marginStart="@dimen/spacing_small"
+            app:imageUrl="@{uiModel.patchImageUrl}"
+            app:placeholder="@{@drawable/image_placeholder}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/image_placeholder" />
+
+        <TextView
+            android:id="@+id/title_mission"
+            style="@style/TextItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:text="@string/mission"
+            app:layout_constraintStart_toEndOf="@id/image_patch"
+            app:layout_constraintTop_toTopOf="@+id/image_patch" />
+
+        <TextView
+            android:id="@+id/title_datetime"
+            style="@style/TextItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datetime"
+            app:layout_constraintStart_toStartOf="@id/title_mission"
+            app:layout_constraintTop_toBottomOf="@+id/text_mission" />
+
+        <TextView
+            android:id="@+id/title_rocket"
+            style="@style/TextItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rocket"
+            app:layout_constraintStart_toStartOf="@id/title_datetime"
+            app:layout_constraintTop_toBottomOf="@+id/text_datetime" />
+
+        <TextView
+            android:id="@+id/title_days_diff"
+            style="@style/TextItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/title_rocket"
+            app:layout_constraintTop_toBottomOf="@+id/text_rocket"
+            android:text="@{uiModel.daysDiffTitle}"
+            tools:text="@string/days_diff_title_from" />
+
+        <TextView
+            android:id="@+id/text_mission"
+            style="@style/TextItemValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_tab"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:text="@{uiModel.mission}"
+            app:layout_constraintEnd_toStartOf="@+id/image_success"
+            app:layout_constraintStart_toStartOf="@id/title_mission"
+            app:layout_constraintTop_toTopOf="@+id/title_mission"
+            tools:text="@string/mission" />
+
+        <TextView
+            android:id="@+id/text_datetime"
+            style="@style/TextItemValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_tab"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:text="@{uiModel.timestamp}"
+            app:layout_constraintEnd_toStartOf="@+id/image_success"
+            app:layout_constraintStart_toStartOf="@id/title_datetime"
+            app:layout_constraintTop_toTopOf="@+id/title_datetime"
+            tools:text="@string/datetime_template" />
+
+        <TextView
+            android:id="@+id/text_rocket"
+            style="@style/TextItemValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_tab"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:text="@{uiModel.rocket}"
+            app:layout_constraintEnd_toStartOf="@+id/image_success"
+            app:layout_constraintStart_toStartOf="@id/title_rocket"
+            app:layout_constraintTop_toTopOf="@+id/title_rocket"
+            tools:text="@string/rocket_template" />
+
+        <TextView
+            android:id="@+id/text_days_diff"
+            style="@style/TextItemValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_tab"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:text="@{String.valueOf(uiModel.daysDiff)}"
+            app:layout_constraintEnd_toStartOf="@+id/image_success"
+            app:layout_constraintStart_toStartOf="@id/title_days_diff"
+            app:layout_constraintBottom_toBottomOf="@+id/title_days_diff"
+            tools:text="0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_success"
+            android:layout_width="@dimen/success_image_size"
+            android:layout_height="@dimen/success_image_size"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            app:placeholder="@{uiModel.successful ? @drawable/ic_launch_successful : @drawable/ic_launch_unsuccessful}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/image_patch"
+            tools:src="@drawable/ic_launch_successful"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

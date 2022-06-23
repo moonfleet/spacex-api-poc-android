@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SpaceX" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:listDivider">@drawable/item_decoration</item>
+        <item name="android:buttonStyle">@style/Button.Link</item>
+        <item name="buttonStyle">@style/Button.Link</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.ActionBar</item>
+        <item name="radioButtonStyle">@style/RadioButton</item>
+
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ThemeOverlay.ActionBar" parent="">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="RadioButton" parent="@style/Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:buttonTint">@drawable/radio_button_color</item>
+    </style>
+
+    <style name="Button.Link" parent="Base.Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/light_grey</item>
+        <item name="android:colorButtonNormal">@color/light_grey</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.SpaceX.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SpaceX.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SpaceX.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

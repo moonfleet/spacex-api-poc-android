@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="company_info_template">%1$s was founded by %2$s in %3$s. It has now %4$s employees, %5$s launch sites, and is valued at USD %6$s</string>
+    <string name="timestamp_template">%1$s at %2$s</string>
+    <string name="rocket_template">%1$s / %2$s</string>
+    <string name="datetime_template">%1$s at %2$s</string>
+    <string name="company">COMPANY</string>
+    <string name="launches">LAUNCHES</string>
+    <string name="mission">Mission:</string>
+    <string name="datetime">Date/time:</string>
+    <string name="rocket">Rocket:</string>
+    <string name="days_diff_title_since">Days\nsince now:</string>
+    <string name="days_diff_title_from">Days\nfrom now:</string>
+    <string name="date_format" translatable="true">dd-MM-yyyy \'at\' HH:mm</string>
+    <string name="article">Article</string>
+    <string name="wiki">Wikipedia</string>
+    <string name="video">Video</string>
+    <string name="no_url_resources">No links for this mission</string>
+    <string name="filter">Filter…</string>
+    <string name="show_all">Show All</string>
+    <string name="show_successful">Show Successful Only</string>
+    <string name="show_unsuccessful">Show Unsuccessful Only</string>
+    <string name="asc">ASC</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="desc">DESC</string>
+    <string name="order">Order</string>
+    <string name="mission_success">Success</string>
+    <string name="years">Years</string>
+    <string name="no_launches">No relevant launches found</string>
+</resources>

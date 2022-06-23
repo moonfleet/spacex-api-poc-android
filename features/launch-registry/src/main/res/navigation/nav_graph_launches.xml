@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_launches"
+    app:startDestination="@id/launches">
+
+    <fragment
+        android:id="@+id/launches"
+        android:name="com.moonfleet.spacex.feature.launchregistry.ui.view.LaunchesFragment"
+        tools:layout="@layout/fragment_launches">
+    </fragment>
+
+</navigation>

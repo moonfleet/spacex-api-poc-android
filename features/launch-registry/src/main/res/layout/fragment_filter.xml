@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="launchFilter"
+            type="com.moonfleet.spacex.feature.launchregistry.ui.model.LaunchFilter"/>
+        <variable
+            name="adapter"
+            type="com.moonfleet.spacex.feature.launchregistry.ui.view.YearsSimpleAdapter"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_large">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextItemValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:text="@string/order"
+                    android:textAllCaps="true" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextItemValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/desc" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_order"
+                        style="@style/SwitchMaterial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/switch_height"
+                        android:checked="@{launchFilter.ascendingOrder}" />
+
+                    <TextView
+                        style="@style/TextItemValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/asc" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextItemValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mission_success"
+                    android:textAllCaps="true" />
+
+                <RadioGroup
+                    android:id="@+id/group_success"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@{launchFilter.successStatus == null ? @id/button_show_all : (launchFilter.successStatus ? @id/button_show_successful : @id/button_show_unsuccessful)}">
+
+                <RadioButton
+                        android:id="@+id/button_show_all"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/show_all" />
+
+                    <RadioButton
+                        android:id="@+id/button_show_successful"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/show_successful" />
+
+                    <RadioButton
+                        android:id="@+id/button_show_unsuccessful"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/show_unsuccessful" />
+                </RadioGroup>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextItemValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/years"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_years"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:adapter="@{adapter}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:spanCount="@integer/years_span_count" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

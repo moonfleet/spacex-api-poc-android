@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ContentLoadingProgress">
+        <item name="colorAccent">@color/black</item>
+    </style>
+
+    <style name="TextItemTitle" parent="@android:style/TextAppearance" >
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextItemValue" parent="@android:style/TextAppearance" >
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SwitchMaterial" parent="@style/Widget.AppCompat.CompoundButton.Switch">
+        <item name="trackTint">@drawable/switch_track</item>
+        <item name="thumbTint">@drawable/switch_thumb</item>
+    </style>
+
+</resources>

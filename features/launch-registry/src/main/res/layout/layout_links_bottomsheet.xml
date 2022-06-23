@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="bottomSheetDialog"
+            type="com.moonfleet.spacex.feature.launchregistry.ui.view.ModalBottomSheetFragment"/>
+        <variable
+            name="linkUrls"
+            type="com.moonfleet.spacex.feature.launchregistry.ui.model.Links"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/standard_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/spacing_xlarge"
+                    android:onClick="@{() -> bottomSheetDialog.onUrlClick(linkUrls.articleUrl)}"
+                    app:gone="@{linkUrls.articleUrl == null}"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="@string/article" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_wiki"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/spacing_xlarge"
+                    android:onClick="@{() -> bottomSheetDialog.onUrlClick(linkUrls.wikiUrl)}"
+                    app:gone="@{linkUrls.wikiUrl == null}"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="@string/wiki" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/spacing_xlarge"
+                    android:onClick="@{() -> bottomSheetDialog.onUrlClick(linkUrls.videoUrl)}"
+                    app:gone="@{linkUrls.videoUrl == null}"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:text="@string/video" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
