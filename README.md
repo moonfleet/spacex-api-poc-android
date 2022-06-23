@@ -1,6 +1,6 @@
 # spacex-api-poc-android
 
-A PoC of an Android client for the SpaceX public APIs:
+A PoC of an MV*-based Android client for the SpaceX public APIs:
 
 https://github.com/r-spacex/SpaceX-API/blob/master/docs/README.md
 
